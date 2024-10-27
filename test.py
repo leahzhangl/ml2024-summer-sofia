@@ -39,9 +39,9 @@ def X_input():
 	"""Input prompt"""
 	X_input = input("Please input an integer X")
 	
-	if X_input in integer_list
+	if X_input in integer_list:
 		print("{X_input}".format(index))
-	else
+	else:
 		print("-1")
 
 
