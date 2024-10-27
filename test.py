@@ -38,11 +38,13 @@ integer_list.append = ["user_input4"]
 def X_input():
 	"""Input prompt"""
 	X_input = input("Please input an integer X")
-  if  
-    for index in integer_list
-	  print(f"{}".format(index))
-  else
-    print("-1")
+	
+  if X_input not in integer_list
+	print("-1")
+
+elif X_input in integer_list
+	print(X_input.index)
+
 
 
 ########################################################################################
