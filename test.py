@@ -5,7 +5,7 @@
 #The program asks the user for input N (positive integer) and reads it
 
 def main():
-	"""Input prompt"""
+	
 	N = int(input("Please input a positive integer N: "))
 	print(f"{N}")
 
