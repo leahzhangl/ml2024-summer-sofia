@@ -12,11 +12,11 @@ class Integer():
         self.N = int(input("Please input a positive integer N: "))
         numbers = []
         for i in range(N):
-		      num = int(input(f"Enter number {i + 1}: "))
+	  num = int(input(f"Enter number {i + 1}: "))
           numbers.append(num)
         self.X = int(input("Enter the integer X to search for: "))
         if X in numbers:
-		      index = numbers.index(X) + 1\
+	  index = numbers.index(X) + 1\
           print(f"{index}")
         else:
           print("-1")
