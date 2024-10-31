@@ -23,8 +23,8 @@ class Integer():
 		else:
 			print("-1")
 
-def main():
 
+def main():
 	M = Integer()
 	
 	N = int(input("Please input a positive integer N: "))
