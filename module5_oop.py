@@ -25,9 +25,8 @@ class Integer():
 
 
 def main():
-	M = Integer()
-	
 	N = int(input("Please input a positive integer N: "))
+	M = Integer()
 	M.inputnumbers(N)
 	
 	X = int(input("Enter the integer X to search for: "))
