@@ -14,7 +14,7 @@ class Integer():
 	def inputnumbers(self, N):
 		for i in range(N):
 			num = int(input(f"Enter number {i + 1}: "))
-			numbers.append(num)
+			self.numbers.append(num)
 			
 	def findindex(self, X): 
 		if X in self.numbers:
