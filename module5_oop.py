@@ -10,25 +10,28 @@
 class Integer():
 	def __init__(self):
 		self.numbers = []
-	def readnumbers(self, N):
+		
+	def inputnumbers(self, N):
 		for i in range(N):
 			num = int(input(f"Enter number {i + 1}: "))
 			numbers.append(num)
-	def findindex(Self, X): 
+			
+	def findindex(self, X): 
 		if X in self.numbers:
-			index = self.numbers.index(X) + 1\
+			index = self.numbers.index(X) + 1
 			print(f"{index}")
 		else:
 			print("-1")
 
 def main()
-	M = NumM()
-	N = int(input("Please input a positive integer N: "))
-	M.readnumbers(N)
-	X = int(input("Enter the integer X to search for: "))
-	outcome = M.findindex
-	print(outcome)
 
+	M = Integer()
+	
+	N = int(input("Please input a positive integer N: "))
+	M.inputnumbers(N)
+	
+	X = int(input("Enter the integer X to search for: "))
+	M.findindex(X)
 
 main()
 
