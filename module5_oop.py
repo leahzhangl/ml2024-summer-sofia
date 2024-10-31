@@ -8,21 +8,28 @@
 #In the end, the program asks the user for input X (integer) and outputs: "-1" if there were no such X among N read numbers, or the index (from 1 to N) of this X if the user inputted it before.
 
 class Integer():
-	def main(self, N, X):
-		self.N = int(input("Please input a positive integer N: "))
-		numbers = []
+	def __init__(self):
+		self.numbers = []
+	def readnumbers(self, N):
 		for i in range(N):
 			num = int(input(f"Enter number {i + 1}: "))
 			numbers.append(num)
-		self.X = int(input("Enter the integer X to search for: "))
-		if X in numbers:
-			index = numbers.index(X) + 1\
+	def findindex(Self, X): 
+		if X in self.numbers:
+			index = self.numbers.index(X) + 1\
 			print(f"{index}")
 		else:
 			print("-1")
 
-jackman = Integer()
-jackman.N("4")
-jackman.X("3")
+def main()
+	M = NumM()
+	N = int(input("Please input a positive integer N: "))
+	M.readnumbers(N)
+	X = int(input("Enter the integer X to search for: "))
+	outcome = M.findindex
+	print(outcome)
+
+
+main()
 
 
