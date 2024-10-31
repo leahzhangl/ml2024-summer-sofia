@@ -23,7 +23,7 @@ class Integer():
 		else:
 			print("-1")
 
-def main()
+def main():
 
 	M = Integer()
 	
