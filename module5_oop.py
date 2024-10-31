@@ -33,6 +33,7 @@ def main():
 	X = int(input("Enter the integer X to search for: "))
 	M.findindex(X)
 
-main()
+if __name__ == "__main__":
+	main()
 
 
