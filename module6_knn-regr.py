@@ -13,36 +13,36 @@
 import numpy as np
 
 class KNNRegression:
-  def __init__(self, N, k, points):
-    self.N = N
-    self.k = k
-    self.points = np.array(points)
-    
-  def predict(self, X):
-    if self.k > self.N:
-      raise ValueError("k should be less than or equal to N")
-    distances = np.abs(self.points[:, 0] - X)  
-    sorted_indices = np.argsort(distances) 
-    nearest_neighbors = self.points[sorted_indices[:self.k]]
-    return np.mean(nearest_neighbors[:, 1])  
+	def __init__(self, N, k, points):
+		self.N = N
+		self.k = k
+		self.points = np.array(points)
+	
+	def predict(self, X):
+		if self.k > self.N:
+			raise ValueError("k should be less than or equal to N")
+		distances = np.abs(self.points[:, 0] - X)  
+		sorted_indices = np.argsort(distances) 
+		nearest_neighbors = self.points[sorted_indices[:self.k]]
+		return np.mean(nearest_neighbors[:, 1])  
 
 def main():
 	N = int(input("How many data points would you set: "))
-  k = int(input("Which level of kNN would you use(number of neighbors): "))
-  if k > N:
-    print("Error: k should be less than or equal to N!")
-    return
-  points = []
-  for i in range(N):
-    x = float(input("Enter x value for point {i+1}: "))
-    y = float(input("Enter y value for point {i+1}: "))
-    points.append((x, y))
-
-  model = KNNRegression(N, k, points)
-
-  X = float(input("Enter the test value X to predict its correlative Y: "))
-  Y = model.predict(X)
-  print("The Y is: {Y}")
+	k = int(input("Which level of kNN would you use(number of neighbors): "))
+	if k > N:
+		return "Error: k should be less than or equal to N!"
+	
+	points = []
+	for i in range(N):
+		x = float(input("Enter x value for point {i+1}: "))
+		y = float(input("Enter y value for point {i+1}: "))
+		points.append((x, y))
+	
+	model = KNNRegression(N, k, points)
+	
+	X = float(input("Enter the test value X to predict its correlative Y: "))
+	Y = model.predict(X)
+	print("The Y is: {Y}")
 
 if __name__ == "__main__":
-    main()
+	main()
