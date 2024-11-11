@@ -34,15 +34,15 @@ def main():
 	
 	points = []
 	for i in range(N):
-		x = float(input("Enter x value for point {i+1}: "))
-		y = float(input("Enter y value for point {i+1}: "))
+		x = float(input(f"Enter x value for point:{i+1}"))
+		y = float(input(f"Enter y value for point:{i+1}"))
 		points.append((x, y))
 	
 	model = KNNRegression(N, k, points)
 	
 	X = float(input("Enter the test value X to predict its correlative Y: "))
 	Y = model.predict(X)
-	print("The Y is: {Y}")
+	print(f"The Y is:{Y}")
 
 if __name__ == "__main__":
 	main()
