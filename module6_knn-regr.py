@@ -40,7 +40,7 @@ def main():
 	
 	model = KNNRegression(N, k, points)
 	
-	X = float(input("Enter the test value X to predict its correlative Y: "))
+	X = list(map(float, input("Enter the test value X to predict its correlative Y: "))
 	Y = model.predict(X)
 	print(f"The Y is  {Y} ")
 
