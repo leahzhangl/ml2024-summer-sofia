@@ -39,7 +39,7 @@ def main():
 		X[i] = [x, y[i]]
 	
 
-	X_test = float(input("Enter the test value X to predict its correlative Y: "))
+	X_test = list(map(float, input("Enter the test value X to predict its correlative Y: "))
 	Y_pred, variance = KNNregression(X, y, X_test, k)
 
 	print(f"The Y is  {Y_pred} ")
