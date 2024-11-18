@@ -16,7 +16,7 @@ import numpy as np
 from sklearn.neighbors import KNeighborsRegressor
 
 def KNNregression(X, y, X_test, k):
-
+	
 	knn_regressor = KNeighborsRegressor(n_neighbors=k)
 	knn_regressor.fit(X, y)
 	Y_pred = KNNregressor.predict([X_test])
@@ -32,10 +32,10 @@ def main():
 
 	X = np.zeros((N, 2))
 	y = np.zeros(N)
-
-  for i in range(N):
-      x, y[i] = map(float, input(f"Enter x and y values for point {i+1}: ").split())
-      X[i] = [x, y[i]]
+	
+	for i in range(N):
+		x, y[i] = map(float, input(f"Enter x and y values for point {i+1}: ").split())
+		X[i] = [x, y[i]]
 	
 
 	X_test = float(input("Enter the test value X to predict its correlative Y: "))
