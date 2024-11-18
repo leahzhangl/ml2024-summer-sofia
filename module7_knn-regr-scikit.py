@@ -25,7 +25,7 @@ def KNNregression(X, y, X_test, k):
 	return Y_pred[0], variance
 
 
-if __name__ == "__main__":
+def main():
 	N = int(input("How many data points would you set: "))
 	k = int(input("Which level of kNN would you use(number of neighbors): "))
 	if k > N:
@@ -40,8 +40,10 @@ if __name__ == "__main__":
 	
 
 	X_test = float(input("Enter the test value X to predict its correlative Y: "))
-	Y_pred, variance = KNNregression(X, y, X_test, k)
+	result = KNNregression(X, y, X_test, k)
 
 	print(f"The Y is  {Y_pred} ")
 	print(f"The variance is {variance} ")
-
+	
+if __name__ == "__main__":
+	main()
