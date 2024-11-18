@@ -24,7 +24,7 @@ def KNNregression(X, y, X_test, k):
 	return Y_pred[0], variance
 
 
-def main():
+if __name__ == "__main__":
 	N = int(input("How many data points would you set: "))
 	k = int(input("Which level of kNN would you use(number of neighbors): "))
 	if k > N:
@@ -44,5 +44,3 @@ def main():
 	print(f"The Y is  {Y_pred} ")
 	print(f"The variance is {variance} ")
 
-if __name__ == "__main__":
-	main()
