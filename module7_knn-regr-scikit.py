@@ -40,7 +40,7 @@ def main():
 	
 
 	X_test = float(input("Enter the test value X to predict its correlative Y: "))
-	result = KNNregression(X, y, X_test, k)
+	Y_pred, variance = KNNregression(X, y, X_test, k)
 
 	print(f"The Y is  {Y_pred} ")
 	print(f"The variance is {variance} ")
