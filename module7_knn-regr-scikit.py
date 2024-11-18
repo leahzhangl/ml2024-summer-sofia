@@ -16,20 +16,21 @@ import numpy as np
 from sklearn.neighbors import KNeighborsRegressor
 
 def KNNregression(X, y, X_test, k):
-	if k > len(X):
-		return "Error: k should be less than or equal to N!"
 	
 	model = KNeighborsRegressor(n_neighbors=k)
 	model.fit(X, y)
 	Y_pred = model.predict([X_test])
 	variance = np.var(y)
+	
 	return Y_pred[0], variance
 
 
 if __name__ == "__main__":
 	N = int(input("How many data points would you set: "))
 	k = int(input("Which level of kNN would you use(number of neighbors): "))
-	
+	if k > N:
+		return "Error: k should be less than or equal to N!"
+			
 	X = np.zeros((N, 2))
 	y = np.zeros(N)
 	
