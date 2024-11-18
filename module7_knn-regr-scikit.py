@@ -17,9 +17,9 @@ from sklearn.neighbors import KNeighborsRegressor
 
 def KNNregression(X, y, X_test, k):
 	
-	knn_regressor = KNeighborsRegressor(n_neighbors=k)
-	knn_regressor.fit(X, y)
-	Y_pred = KNNregressor.predict([X_test])
+	model = KNeighborsRegressor(n_neighbors=k)
+	model.fit(X, y)
+	Y_pred = model.predict([X_test])
 	variance = np.var(y)
 	return Y_pred[0], variance
 
