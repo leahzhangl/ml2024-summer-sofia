@@ -15,12 +15,12 @@
 import numpy as np
 from sklearn.neighbors import KNeighborsRegressor
 
-def KNNregression(X, y, X_test, k):
+def KNNregression(X, Y, X_test, k):
 	
 	model = KNeighborsRegressor(n_neighbors=k)
-	model.fit(X, y)
+	model.fit(X, Y)
 	Y_pred = model.predict([X_test])
-	variance = np.var(y)
+	variance = np.var(Y)
 	
 	return Y_pred[0], variance
 
@@ -40,7 +40,7 @@ def main():
 	
 
 	X_test = list(map(float, input("Enter the test value X to predict its correlative Y: "))
-	Y_pred, variance = KNNregression(X, y, X_test, k)
+	Y_pred, variance = KNNregression(X, Y, X_test, k)
 
 	print(f"The Y is  {Y_pred} ")
 	print(f"The variance is {variance} ")
