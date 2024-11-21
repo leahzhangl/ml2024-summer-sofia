@@ -9,8 +9,7 @@
 ###(note: you can combine with what you've done from the previous tasks).
 
 import numpy as np
-from sklearn.metrics import precision_score
-from sklearn.metrics import recall_score
+from sklearn.metrics import precision_score, recall_score
 
 N = int(input("How many data points would you set: "))
 		
