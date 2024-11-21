@@ -26,5 +26,4 @@ recall = recall_score(X, Y)
 print(f"Precision: {precision:.2f}")
 print(f"Recall: {recall:.2f}")
 
-if __name__ == "__main__":
-	main()
+
