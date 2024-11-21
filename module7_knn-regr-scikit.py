@@ -31,12 +31,12 @@ def main():
 	if k > N:
 		return "Error: k should be less than or equal to N!"
 			
-	X = np.zeros((N, 2))
-	y = np.zeros(N)
+	X = np.zeros(N)
+	Y = np.zeros(N)
 	
 	for i in range(N):
-		x, y[i] = map(float, input(f"Enter x and y values for point {i+1}: ").split())
-		X[i] = [x, y[i]]
+		X[i] = float(input(f"Enter x values for point {i+1}: "))
+		Y[i] = float(input(f"Enter y values for point {i+1}: "))
 	
 
 	X_test = list(map(float, input("Enter the test value X to predict its correlative Y: "))
