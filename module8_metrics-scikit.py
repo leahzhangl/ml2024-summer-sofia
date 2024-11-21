@@ -17,8 +17,8 @@ X = np.zeros(N)
 y = np.zeros(N)
 	
 for i in range(N):
-	x, y[i] = map(float, input(f"Enter either 0 or 1 for x(correct) and y(predicted) values for point {i+1}: ").split())
-	X[i] = [x, y[i]]
+	X[i] = map(float, input(f"Enter either 0 or 1 for X (correct) values for point {i+1}: "))
+	Y[i] = map(float, input(f"Enter either 0 or 1 for Y (predicted) values for point {i+1}: "))
 
 precision = precision_score(X, Y)
 recall = recall_score(X, Y)
