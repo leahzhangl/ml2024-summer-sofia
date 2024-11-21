@@ -14,7 +14,7 @@ from sklearn.metrics import precision_score, recall_score
 N = int(input("How many data points would you set: "))
 		
 X = np.zeros(N)
-Y = np.zeros(N)
+y = np.zeros(N)
 	
 for i in range(N):
 	x, y[i] = map(float, input(f"Enter either 0 or 1 for x(correct) and y(predicted) values for point {i+1}: ").split())
