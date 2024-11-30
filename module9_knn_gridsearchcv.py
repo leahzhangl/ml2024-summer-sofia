@@ -47,8 +47,8 @@ def main():
 			best_accuracy = accuracy
 			best_k = k
 
-print("Best k:", best_k)
-print("Best accuracy:", best_accuracy
+	print("Best k:", best_k)
+	print("Best accuracy:", best_accuracy
 
 
 
