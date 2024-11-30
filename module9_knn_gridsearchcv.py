@@ -32,19 +32,19 @@ def main():
 		Xtest[i] = int(input(f"Enter real number for X(input feature) for test pair {i+1}: "))
 		Ytest[i] = int(input(f"Enter non-negative integer for Y(class label) for test pair {i+1}: "))
 
-	best_k = 1
-	best_accuracy = 0
+	bestk = 1
+	bestaccuracy = 0
 	for k in range(1, 11):
 		knn = KNeighborsClassifier(n_neighbors=k)
-		knn.fit(X_train.reshape(-1, 1), y_train)
-		y_pred = knn.predict(X_test.reshape(-1, 1))
-		accuracy = accuracy_score(y_test, y_pred)
-		if accuracy > best_accuracy:
-			best_accuracy = accuracy
-			best_k = k
+		knn.fit(X.reshape(-1, 1), Y)
+		Ytest = knn.predict(Xtest.reshape(-1, 1))
+		accuracy = accuracy_score(Xtest, Ytest)
+		if accuracy > bestaccuracy:
+			bestaccuracy = accuracy
+			bestk = k
 
-	print("Best k:", best_k)
-	print("Best accuracy:", best_accuracy
+	print("Best k:", bestk)
+	print("Best accuracy:", bestaccuracy)
 
 if __name__ == "__main__":
 	main()
