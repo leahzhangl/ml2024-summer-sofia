@@ -17,8 +17,6 @@ import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 
-
-
 def main():
 	N = int(input("How many training pairs would you set: "))
 	X = np.zeros(N)
@@ -27,14 +25,12 @@ def main():
 		X[i] = int(input(f"Enter real number for X(input feature) for training pair {i+1}: "))
 		Y[i] = int(input(f"Enter non-negative integer for Y(class label) for training pair {i+1}: "))
 
-
 	M = int(input("How many test pairs would you set: "))
 	Xtest = np.zeros(M)
 	Ytest = np.zeros(M)
 	for i in range(M):
 		Xtest[i] = int(input(f"Enter real number for X(input feature) for test pair {i+1}: "))
 		Ytest[i] = int(input(f"Enter non-negative integer for Y(class label) for test pair {i+1}: "))
-
 
 	best_k = 1
 	best_accuracy = 0
@@ -49,9 +45,6 @@ def main():
 
 	print("Best k:", best_k)
 	print("Best accuracy:", best_accuracy
-
-
-
 
 if __name__ == "__main__":
 	main()
