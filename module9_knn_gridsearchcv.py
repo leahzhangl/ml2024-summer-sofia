@@ -36,6 +36,21 @@ def main():
 		Ytest[i] = int(input(f"Enter non-negative integer for Y(class label) for test pair {i+1}: "))
 
 
+	best_k = 1
+	best_accuracy = 0
+	for k in range(1, 11):
+		knn = KNeighborsClassifier(n_neighbors=k)
+		knn.fit(X_train.reshape(-1, 1), y_train)
+		y_pred = knn.predict(X_test.reshape(-1, 1))
+		accuracy = accuracy_score(y_test, y_pred)
+		if accuracy > best_accuracy:
+			best_accuracy = accuracy
+			best_k = k
+
+print("Best k:", best_k)
+print("Best accuracy:", best_accuracy
+
+
 
 
 if __name__ == "__main__":
