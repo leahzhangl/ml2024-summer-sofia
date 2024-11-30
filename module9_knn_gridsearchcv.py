@@ -33,19 +33,14 @@ def main():
 		Xtest[i] = int(input(f"Enter real number for X(input feature) for test pair {i+1}: "))
 		Ytest[i] = int(input(f"Enter non-negative integer for Y(class label) for test pair {i+1}: "))
 
-	bestk = 1
-	bestaccuracy = 0
-	for k in range(1, 11):
-		knn = KNeighborsClassifier(n_neighbors=k)
-		knn.fit(X.reshape(-1, 1), Y)
-		Ytest = knn.predict(Xtest.reshape(-1, 1))
-		accuracy = accuracy_score(Xtest, Ytest)
-		if accuracy > bestaccuracy:
-			bestaccuracy = accuracy
-			bestk = k
+	
+	param_grid = {'n_neighbors': range(1, 11)}
+	grid_search = GridSearchCV(KNeighborsClassifier(), param_grid, cv=5)
+	grid_search.fit(X, Y)
 
-	print("Best k:", bestk)
-	print("Best accuracy:", bestaccuracy)
+	print("Best parameters:", grid_search.best_params_)
+	print("Best accuracy:", grid_search.best_score_) 
+
 
 if __name__ == "__main__":
 	main()
