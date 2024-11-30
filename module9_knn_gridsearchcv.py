@@ -16,6 +16,7 @@
 import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
+from sklearn.model_selection import GridSearchCV
 
 def main():
 	N = int(input("How many training pairs would you set: "))
