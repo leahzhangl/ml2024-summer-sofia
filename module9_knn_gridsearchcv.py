@@ -20,14 +20,14 @@ from sklearn.metrics import accuracy_score
 
 def main():
 	N = int(input("How many training pairs would you set: "))
-	TrainS = np.zeros((N, 2))
+	TrainS = np.zeros(N, 2)
 	for i in range(N):
 		x = float(input(f"Enter real number for X(input feature) for training pair {i+1}: "))
 		y = int(input(f"Enter non-negative integer for Y(class label) for training pair {i+1}: "))
 		TrainS[i] = [x, y]
 
 	M = int(input("How many test pairs would you set: "))
-	TestS = np.zeros((N, 2))
+	TestS = np.zeros(N, 2)
 	for i in range(M):
 		j = float(input(f"Enter real number for X(input feature) for test pair {i+1}: "))
 		k = int(input(f"Enter non-negative integer for Y(class label) for test pair {i+1}: "))
