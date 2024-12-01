@@ -42,6 +42,5 @@ def main():
 	test_accuracy = accuracy_score(Ytest, y_pred)
 	print("Test accuracy:", test_accuracy)
 
-
 if __name__ == "__main__":
 	main()
