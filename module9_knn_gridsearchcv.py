@@ -16,6 +16,7 @@
 import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import accuracy_score
 
 def main():
 	N = int(input("How many training pairs would you set: "))
@@ -31,14 +32,15 @@ def main():
 	for i in range(M):
 		Xtest[i] = int(input(f"Enter real number for X(input feature) for test pair {i+1}: "))
 		Ytest[i] = int(input(f"Enter non-negative integer for Y(class label) for test pair {i+1}: "))
-
 	
 	param_grid = {'n_neighbors': range(1, 11)}
 	grid_search = GridSearchCV(KNeighborsClassifier(), param_grid, cv=5)
 	grid_search.fit(X, Y)
-
 	print("Best parameters:", grid_search.best_params_)
-	print("Best accuracy:", grid_search.best_score_) 
+	best_knn = grid_search.best_estimator_
+	y_pred = best_knn.predict(Xtest)
+	test_accuracy = accuracy_score(Ytest, y_pred)
+	print("Test accuracy:", test_accuracy)
 
 
 if __name__ == "__main__":
