@@ -35,11 +35,11 @@ def main():
 	
 	param_grid = {'n_neighbors': range(1, 11)}
 	grid_search = GridSearchCV(KNeighborsClassifier(), param_grid)
-	grid_search.fit(X.reshape(-1, 1), Y)
+	grid_search.fit(X, Y)
 	print("Best parameters:", grid_search.best_params_)
 	best_knn = grid_search.best_estimator_
-	y_pred = best_knn.predict(Xtest.reshape(-1, 1))
-	test_accuracy = accuracy_score(Ytest.reshape(-1, 1), y_pred)
+	y_pred = best_knn.predict(Xtest)
+	test_accuracy = accuracy_score(Ytest, y_pred)
 	print("Test accuracy:", test_accuracy)
 
 if __name__ == "__main__":
