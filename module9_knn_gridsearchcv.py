@@ -38,8 +38,8 @@ def main():
 	grid_search.fit(x, y)
 	print("Best parameters:", grid_search.best_params_)
 	best_knn = grid_search.best_estimator_
-	y_pred = best_knn.predict(y)
-	test_accuracy = accuracy_score(j, y_pred)
+	y_pred = best_knn.predict(j)
+	test_accuracy = accuracy_score(k, y_pred)
 	print("Test accuracy:", test_accuracy)
 
 if __name__ == "__main__":
