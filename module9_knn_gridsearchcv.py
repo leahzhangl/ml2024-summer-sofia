@@ -34,7 +34,7 @@ def main():
 		Ytest[i] = int(input(f"Enter non-negative integer for Y(class label) for test pair {i+1}: "))
 	
 	param_grid = {'n_neighbors': range(1, 11)}
-	grid_search = GridSearchCV(KNeighborsClassifier(), param_grid, cv=5)
+	grid_search = GridSearchCV(KNeighborsClassifier(), param_grid, cv='leave-one-out')
 	grid_search.fit(X, Y)
 	print("Best parameters:", grid_search.best_params_)
 	best_knn = grid_search.best_estimator_
