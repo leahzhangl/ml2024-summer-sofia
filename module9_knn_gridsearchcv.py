@@ -20,26 +20,26 @@ from sklearn.metrics import accuracy_score
 
 def main():
 	N = int(input("How many training pairs would you set: "))
-	X = np.zeros(N)
-	Y = np.zeros(N)
+	TrainS = np.zeros((N, 2))
 	for i in range(N):
-		X[i] = float(input(f"Enter real number for X(input feature) for training pair {i+1}: "))
-		Y[i] = int(input(f"Enter non-negative integer for Y(class label) for training pair {i+1}: "))
+		x = float(input(f"Enter real number for X(input feature) for training pair {i+1}: "))
+		y = int(input(f"Enter non-negative integer for Y(class label) for training pair {i+1}: "))
+		TrainS[i] = [x, y]
 
 	M = int(input("How many test pairs would you set: "))
-	Xtest = np.zeros(M)
-	Ytest = np.zeros(M)
+	TestS = np.zeros((N, 2))
 	for i in range(M):
-		Xtest[i] = float(input(f"Enter real number for X(input feature) for test pair {i+1}: "))
-		Ytest[i] = int(input(f"Enter non-negative integer for Y(class label) for test pair {i+1}: "))
+		j = float(input(f"Enter real number for X(input feature) for test pair {i+1}: "))
+		k = int(input(f"Enter non-negative integer for Y(class label) for test pair {i+1}: "))
+		TestS[i] = [j, k]
 	
 	param_grid = {'n_neighbors': range(1, 11)}
 	grid_search = GridSearchCV(KNeighborsClassifier(), param_grid)
-	grid_search.fit(X, Y)
+	grid_search.fit(x, y)
 	print("Best parameters:", grid_search.best_params_)
 	best_knn = grid_search.best_estimator_
-	y_pred = best_knn.predict(Xtest)
-	test_accuracy = accuracy_score(Ytest, y_pred)
+	y_pred = best_knn.predict(y)
+	test_accuracy = accuracy_score(j, y_pred)
 	print("Test accuracy:", test_accuracy)
 
 if __name__ == "__main__":
